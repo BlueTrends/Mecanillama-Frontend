@@ -37,9 +37,9 @@ export default {
   },
   data() {
     return {
-      mechanic: null,
-      mechanicUserService: null,
-      mechanicId: null,
+      mechanic: {},
+      mechanicUserService: {},
+      mechanicId: {},
     };
   },
   created() {

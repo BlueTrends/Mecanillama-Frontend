@@ -77,7 +77,11 @@ export default {
         );
         console.log(newresponse);
         localStorage.setItem("user", JSON.stringify(response.data.id));
+        localStorage.setItem("accessToken", response.data.token);
+        console.log("Token");
+        console.log(localStorage.getItem("accessToken"));
         console.log(localStorage.getItem('user'));
+        console.log("YHFGh");
         if (response.data.role === "customer") {
           this.$router.push("/home-customer");
         }
@@ -91,7 +95,7 @@ export default {
       await AuthenticationApiService.signIn(JSON.stringify(userGiven))
         .then((response) => {
           //localStorage.setItem("user", JSON.stringify(response.data.user));
-          // localStorage.setItem("accessToken",JSON.stringify(response.data.accessToken));
+          //localStorage.setItem("accessToken", response.data.token);
           this.goToComponent(response.data.userId);
           // const user=JSON.parse(AuthService.getCurrentUser());
           // console.log(user)
@@ -102,6 +106,7 @@ export default {
             this.$router.push("/mechanic-admin/home");
           }
           // console.log(userGiven.email)
+          alert(localStorage.getItem("accessToken"));
         })
         .catch((error) => {
           if (error.request.status === 400) {

@@ -1,8 +1,9 @@
 import axios from "axios";
+import { ApiUrl } from "@/core/services/api-url";
 
 //API runs in port 3000, consider this for all services.js
 
 export default axios.create({
-    baseURL: 'https://mecanillama-api.azurewebsites.net/api/v1/',
+    baseURL: ApiUrl,
     headers: { 'Content-type': 'application/json' }
 })

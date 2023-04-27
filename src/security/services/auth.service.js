@@ -1,9 +1,10 @@
 import axios from "axios";
 import http from "../../core/services/http-common";
+import { ApiUrl } from "@/core/services/api-url";
 
 
-const API_URL = "https://mecanillama-api.azurewebsites.net/api/v1/users/sign-up";
-const API_URL_SIGNIN = "https://mecanillama-api.azurewebsites.net/api/v1/users/sign-in";
+const API_URL = `${ApiUrl}users/sign-up`;
+const API_URL_SIGNIN = `${ApiUrl}users/sign-in`;
 
 class AuthService {
     signUp(user) {

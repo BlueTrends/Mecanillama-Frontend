@@ -1,8 +1,8 @@
 import axios from "axios";
-import http from "../../core/services/http-common";
+import { ApiUrl } from "@/core/services/api-url";
 
 
-const API_URL = "https://mecanillama-api.azurewebsites.net/api/v1/users";
+const API_URL = `${ApiUrl}users`;
 const USER_KEY = "user";
 
 class AuthenticationApiService {

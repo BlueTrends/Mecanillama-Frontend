@@ -1,0 +1,1 @@
+export const ApiUrl = "https://bluetrends-mecanillama-api.azurewebsites.net/api/v1/"
