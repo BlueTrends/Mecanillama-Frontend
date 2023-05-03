@@ -37,7 +37,7 @@
               size="large"
               shape="circle"
             />
-            <span>{{customerName}}</span>
+            <span style="text-transform: capitalize;">{{customerName}}</span>
           </div>
         </div>
       </template>
@@ -95,6 +95,7 @@ export default {
       
       this.customer = response.data;
       this.customerName = response.data.name;
+      localStorage.setItem("customerId", response.data.id)
       console.log(this.customer);
     });
   },

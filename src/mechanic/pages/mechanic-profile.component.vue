@@ -277,7 +277,7 @@ export default {
       this.submitted = true;
       this.appointment.time = this.appointment.time.value;
       this.appointment.mechanicId = this.$route.params.mechanicId;
-      this.appointment.customerId = localStorage.getItem("user");
+      this.appointment.customerId = localStorage.getItem("customerId");
       this.mechanicId = this.$route.params.mechanicId;
       console.log(this.appointment);
       this.appointmentsService.create(this.appointment).then((response) => {
