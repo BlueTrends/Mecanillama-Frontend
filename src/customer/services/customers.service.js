@@ -8,4 +8,7 @@ export class CustomersApiService {
     getByUserId(userId) {
         return http.get(`/customers/uid/${ userId }`);
     }
+    updateUser(id,user) {
+        return http.put(`/customers/${ id }`,user);
+    }
 }
