@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://localhost:7056/api/v1/users";
+const API_URL = "https://bluetrends-mecanillama-api.azurewebsites.net/api/v1/users";
 const USER_KEY = "user";
 
 class AuthenticationApiService {
