@@ -1,3 +1,6 @@
+<script setup>
+const imageUrl = new URL('/src/images/hero-img.jfif', import.meta.url)
+</script>
 <template>
   <RouterView />
   <div class="home">
@@ -14,7 +17,7 @@
             width: 400px;
           }
         "
-        src="src/images/hero-img.jfif"
+        :src="imageUrl"
         alt="man over a car"
       />
     </div>

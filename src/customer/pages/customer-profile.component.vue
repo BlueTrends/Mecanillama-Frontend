@@ -3,6 +3,8 @@
     <p>{{getUserName()}}</p>
 </template>
 
+
+
 <script>
 import customerHeaderComponent from "../../components/customer-header.component.vue";
 import AuthService from '../../security/services/auth.service.js'
