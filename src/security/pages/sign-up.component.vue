@@ -90,7 +90,7 @@ export default {
 
         createUser(){
             return{
-                //name: this.name,
+                name: this.name,
                 email: this.email,
                 password: this.password,
                 role: this.role.value,

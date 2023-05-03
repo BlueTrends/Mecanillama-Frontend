@@ -2,8 +2,8 @@ import axios from "axios";
 import http from "../../core/services/http-common";
 
 
-const API_URL = "https://bluetrends-mecanillama-api.azurewebsites.net/api/v1/users/sign-up";
-const API_URL_SIGNIN = "https://bluetrends-mecanillama-api.azurewebsites.net/api/v1/users/sign-in";
+const API_URL = "https://localhost:7056/api/v1/users/sign-up";
+const API_URL_SIGNIN = "https://localhost:7056/api/v1/users/sign-in";
 
 class AuthService {
     signUp(user) {
