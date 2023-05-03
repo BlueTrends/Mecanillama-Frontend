@@ -11,7 +11,8 @@
             <div class="m-3 text-center">
                 <div class="px-3">
                     <span class="p-float-label">
-                        <pv-input-text v-model="name"></pv-input-text>
+                        <pv-input-text v-model="name" type="name" 
+                        id="name" name="name" required></pv-input-text>
                         <label for="name">Name</label>
                     </span>
                 </div>
@@ -20,7 +21,7 @@
             <div class="m-3 text-center">
                 <div class="px-3">
                     <span class="p-float-label">
-                        <pv-input-text v-model="email"></pv-input-text>
+                        <pv-input-text v-model="email" type="email" required id="email"></pv-input-text>
                         <label for="email">Email</label>
                     </span>
                 </div>
@@ -29,7 +30,7 @@
             <div class="m-3 text-center">
                 <div class="px-3">
                     <span class="p-float-label">
-                        <pv-input-text type="password" v-model="password"></pv-input-text>
+                        <pv-input-text type="password" v-model="password" required id="password"></pv-input-text>
                         <label for="password">Password</label>
                     </span>
                 </div>
