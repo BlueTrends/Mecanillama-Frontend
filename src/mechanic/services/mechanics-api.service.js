@@ -1,31 +1,23 @@
 import http from "../../core/services/http-common";
 
 export class MechanicsProfileApiService {
-  
-
   getAll() {
-    const token = localStorage.getItem("token");
-    return http.get("/mechanics",{ headers: { 'Authorization': `Bearer ${token}`}});
+    return http.get("/mechanics");
   }
   getById(id) {
-    const token = localStorage.getItem("token");
-    return http.get(`/mechanics/${id}`,{ headers: { 'Authorization': `Bearer ${token}`}});
+    return http.get(`/mechanics/${id}`);
   }
   getByUserId(id) {
-    const token = localStorage.getItem("token");
-    return http.get(`/mechanics/uid/${id}`,{ headers: { 'Authorization': `Bearer ${token}`}});
+    return http.get(`/mechanics/uid/${id}`);
   }
   create(data) {
-    const token = localStorage.getItem("token");
-    return http.post("/mechanics", data,{ headers: { 'Authorization': `Bearer ${token}`}});
+    return http.post("/mechanics", data);
   }
   update(id, data) {
-    const token = localStorage.getItem("token");
-    return http.put(`/mechanics/${id}`, data,{ headers: { 'Authorization': `Bearer ${token}`}});
+    return http.put(`/mechanics/${id}`, data);
   }
   delete(id) {
-    const token = localStorage.getItem("token");
-    return http.delete(`/mechanics/${id}`,{ headers: { 'Authorization': `Bearer ${token}`}});
+    return http.delete(`/mechanics/${id}`);
   }
 
 }
