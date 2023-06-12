@@ -187,7 +187,7 @@
 </template>
 
 <script>
-import customerHeaderComponent from "../../components/customer-header.component.vue";
+import customerHeaderComponent from "../../components/mechanic-header.component.vue";
 import { ReviewsApiService } from "../../reviews/services/reviews-api.service";
 import { MechanicsProfileApiService } from "../services/mechanics-api.service";
 import { AppointmentsApiService } from "../../appointments/services/appointments.service";

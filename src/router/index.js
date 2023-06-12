@@ -68,6 +68,11 @@ const router = createRouter({
       path: "/mechanic-admin/home",
       name: "mechanic-admin-home",
       component: () => import("../mechanic/pages/home-mechanic.component.vue"),
+    },
+    {
+      path:'/mechanic-profile',
+      name: 'mechanic-profile',
+      component: () => import('../mechanic//pages/profile.component.vue')
     }
   ]
 })

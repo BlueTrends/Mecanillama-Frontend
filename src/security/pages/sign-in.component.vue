@@ -68,6 +68,7 @@ export default {
 
   methods: {
     async login() {
+      localStorage.clear();
       const response = await AuthenticationApiService.iniciar(
         this.email,
         this.password

@@ -21,7 +21,7 @@
             <div class="flex align-items-center justify-content-center cursor-pointer profile text-center">
                 <menu-bar :model="accountMenu"></menu-bar>
                 <pv-avatar image="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&auto=format&fit=crop&w=128"  class="mr-2" size="large" shape="circle" />
-                <span>Formula I</span>
+                <span>{{customerName}}</span>
             </div>
         </div>
     </template>
@@ -42,7 +42,7 @@ export default{
             ],
             accountMenu: [{
                 items: [
-                    { label: "Profile", to: "/customer-profile", icon: 'pi pi-fw pi-user'},
+                    { label: "Profile", to: "/mechanic-profile", icon: 'pi pi-fw pi-user'},
                     { label: "Sign out", to: "/", icon: 'pi pi-fw pi-sign-out' },
                 ]
             }

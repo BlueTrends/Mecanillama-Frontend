@@ -1,5 +1,5 @@
 <template>
-    <customer-header-component></customer-header-component>
+  <mechanic-header-component></mechanic-header-component>
     <p>{{getUserName()}}</p>
     <div class="flex justify-content-center">
         <div class="flex flex-column align-items-center justify-content-center" style="max-width: 26rem;">
@@ -24,14 +24,26 @@
                   </div>
               </div>
 
+              
               <div class="m-3 text-center">
                   <div class="px-3">
                       <span class="p-float-label">
-                          <pv-input-text type="brand" v-model="brand" required id="brand"></pv-input-text>
-                          <label for="brand">Car Brand</label>
+                          <pv-input-text type="phone" v-model="phone" required id="phone"></pv-input-text>
+                          <label for="phone">Phone</label>
                       </span>
                   </div>
               </div>
+
+              <div class="m-3 text-center">
+                  <div class="px-3">
+                      <span class="p-float-label">
+                          <pv-textarea type="description" v-model="description" required id="description"></pv-textarea>
+                          <label for="description">Description</label>
+                      </span>
+                  </div>
+              </div>
+
+
               <div class="button w-full text-center my-5">
                       <pv-button type="submit" class="w-full" label = "Update"></pv-button>
               </div>
@@ -40,23 +52,23 @@
     </div>
 </template>
 <script>
-import customerHeaderComponent from "../../components/customer-header.component.vue";
+import MechanicHeaderComponent from "../../components/mechanic-header.component.vue";
 import AuthService from '../../security/services/auth.service.js'
-import {CustomersApiService} from "../services/customers.service.js";
+import { MechanicsProfileApiService } from "../../mechanic/services/mechanics-api.service";
 
 
 export default {
   name: "customer-profile",
   data(){
     return {
-       name: 'name',
+       customerName: 'name',
        address: 'address',
        brand: 'brand'
 
     };
   },
   components: {
-    customerHeaderComponent,
+    MechanicHeaderComponent,
   },
   methods: {
       getUserName(){
@@ -67,48 +79,39 @@ export default {
             return{
                 name: this.name,
                 address: this.address,
-                carMake: this.brand,
-                userId: localStorage.getItem("user")
+                phone: this.phone,
+                description: this.description,
+                mechanicId: localStorage.getItem("user")
             };
         },
 
         async submit(){
-            const newUser = this.createUser();
-            this.customerUserService = new CustomersApiService();
+            const newMechanic = this.createUser();
+            this.mechanincUserService = new MechanicsProfileApiService();
 
-            this.customerUserService.updateUser(localStorage.getItem("customerId"),JSON.stringify(newUser))
+            this.mechanincUserService.update(localStorage.getItem("mechanicId"),JSON.stringify(newMechanic))
                 .then((response) => {
                     console.log(response.data.user)
             })
             .catch((error) => {
                 this.errors.push(error);
           });
-            this.$router.push("/customer-profile");
+            this.$router.push("/mechanic-profile");
             this.resetForm();
-        },
-
-        async updateUser(newUser){
-            await CustomersApiService.updateUser(localStorage.getItem("user"),newUser)
-                .then((response) => {
-                    console.log(response.data.user)
-            })
-            .catch((error) => {
-                this.errors.push(error);
-          });
         },
   },
   created() {
-    this.customerUserService = new CustomersApiService();
+    this.mechanincUserService = new MechanicsProfileApiService();
     this.customerId = localStorage.getItem("user");    
-    this.customerUserService.getByUserId(this.customerId).then((response) => {
+    this.mechanincUserService.getByUserId(this.customerId).then((response) => {
       
       this.customer = response.data;
-      console.log(this.customer);
       this.name = response.data.name;
       this.address = response.data.address;
-      this.brand = response.data.carMake;
+      this.description = response.data.description;
+      this.phone = response.data.phone;
 
-      localStorage.setItem("customerId", response.data.id)
+      localStorage.setItem("mechanicId", response.data.id)
     });
   },
 }

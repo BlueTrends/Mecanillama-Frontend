@@ -1,5 +1,5 @@
 import axios from "axios";
-import http from "../../core/services/http-common";
+import http from "../../core/services/http-common-login";
 
 
 const API_URL = "https://bluetrends-mecanillama-api.azurewebsites.net/api/v1/users/sign-up";
