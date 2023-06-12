@@ -17,14 +17,17 @@
           flex flex-column
           main-description
         "
+        style="padding-top: 5%;"
       >
-        <h2 class="font-bold text-4xl">{{ selectedMechanic.name }}</h2>
-        <span>
-          <span class=""> <i class="pi pi-star-fill"></i></span>
-          47 reviews
-        </span>
-        <p>{{ selectedMechanic.location }}</p>
-        <p class="font-semibold">{{ selectedMechanic.phone }}</p>
+       <div style="display: inline-flex;
+    align-items: center;
+    width: 100%;"> <h2 style="    width: 30%;">Mechanic: </h2> <h2 class="font-bold text-4xl">{{ selectedMechanic.name }}</h2></div>
+        
+
+       <div style="display: inline-flex;
+    align-items: center;
+    width: 100%;"> <h3 style="    width: 30%;">Phone: </h3> <h3 class="font-bold">{{ selectedMechanic.phone }}</h3></div>
+     
         <pv-button @click="openNew">Make an appointment</pv-button>
       </div>
 
@@ -195,7 +198,7 @@ import reviewComponent from "../../reviews/pages/review.component.vue";
 
 export default {
   components: { reviewComponent },
-  name: "mechanic-profile",
+  name: "mechanic-profile-appointments",
   components: {
     customerHeaderComponent,
     reviewComponent,

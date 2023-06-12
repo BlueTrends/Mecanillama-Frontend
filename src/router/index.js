@@ -46,7 +46,7 @@ const router = createRouter({
     },
     {
       path: '/mechanic-profile/:mechanicId',
-      name: 'mechanic-profile',
+      name: 'mechanic-profile-appointments',
       component: () => import('../mechanic/pages/mechanic-profile.component.vue')
     },
     {

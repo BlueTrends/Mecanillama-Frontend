@@ -22,7 +22,7 @@
             </div>
             <div>
               <h4 class="mb-1">{{ slotProps.data.name }}</h4>
-              <h6 class="mt-0 mb-3">{{ slotProps.data.location }}</h6>
+              <h6 class="mt-0 mb-3">{{ slotProps.data.description }}</h6>
               <div class="car-buttons mt-5">
                 <router-link :to="`/mechanic-profile/${slotProps.data.id}`">
                   <pv-button icon="pi pi-plus" label="See More" />
@@ -57,7 +57,7 @@
             </div>
             <div>
               <h4 class="mb-1">{{ slotProps.data.name }}</h4>
-              <h6 class="mt-0 mb-3">{{ slotProps.data.location }}</h6>
+              <h6 class="mt-0 mb-3">{{ slotProps.data.description }}</h6>
               <div class="car-buttons mt-5">
                 <router-link to="/mechanic-profile">
                   <pv-button icon="pi pi-plus" label="See More" />
@@ -92,7 +92,7 @@
             </div>
             <div>
               <h4 class="mb-1">{{ slotProps.data.name }}</h4>
-              <h6 class="mt-0 mb-3">{{ slotProps.data.location }}</h6>
+              <h6 class="mt-0 mb-3">{{ slotProps.data.description }}</h6>
               <div class="car-buttons mt-5">
                 <router-link to="/mechanic-profile">
                   <pv-button icon="pi pi-plus" label="See More" />
